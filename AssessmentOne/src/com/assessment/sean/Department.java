@@ -3,15 +3,15 @@ package com.assessment.sean;
 import java.util.Objects;
 
 public class Department {
-	private String deptId;
+	private int deptId;
 	private String deptName;
-	private String noOfEmployees;
+	private int noOfEmployees;
 	/**
 	 * @param deptId
 	 * @param deptName
 	 * @param noOfEmployees
 	 */
-	public Department(String deptId, String deptName, String noOfEmployees) {
+	public Department(int deptId, String deptName, int noOfEmployees) {
 		super();
 		this.deptId = deptId;
 		this.deptName = deptName;
@@ -20,13 +20,13 @@ public class Department {
 	/**
 	 * @return the deptId
 	 */
-	String getDeptId() {
+	int getDeptId() {
 		return deptId;
 	}
 	/**
 	 * @param deptId the deptId to set
 	 */
-	void setDeptId(String deptId) {
+	void setDeptId(int deptId) {
 		this.deptId = deptId;
 	}
 	/**
@@ -44,13 +44,13 @@ public class Department {
 	/**
 	 * @return the noOfEmployees
 	 */
-	String getNoOfEmployees() {
+	int getNoOfEmployees() {
 		return noOfEmployees;
 	}
 	/**
 	 * @param noOfEmployees the noOfEmployees to set
 	 */
-	void setNoOfEmployees(String noOfEmployees) {
+	void setNoOfEmployees(int noOfEmployees) {
 		this.noOfEmployees = noOfEmployees;
 	}
 	@Override
@@ -73,6 +73,8 @@ public class Department {
 		return Objects.equals(deptId, other.deptId) && Objects.equals(deptName, other.deptName)
 				&& Objects.equals(noOfEmployees, other.noOfEmployees);
 	}
+
+	
 	
 	
 

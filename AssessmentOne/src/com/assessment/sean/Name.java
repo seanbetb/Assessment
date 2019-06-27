@@ -18,8 +18,42 @@ public class Name {
 	/**
 	 * @return the title
 	 */
-	String getTitle() {
+	public String getTitle() {
 		return title;
+	}
+	/**
+	 * @param title the title to set
+	 */
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	@Override
+	public String toString() {
+		return "Name [title=" + title + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -56,39 +90,7 @@ public class Name {
 			return false;
 		return true;
 	}
-	/**
-	 * @param title the title to set
-	 */
-	void setTitle(String title) {
-		this.title = title;
-	}
-	/**
-	 * @return the firstName
-	 */
-	String getFirstName() {
-		return firstName;
-	}
-	/**
-	 * @param firstName the firstName to set
-	 */
-	void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	/**
-	 * @return the lastNameString
-	 */
-	String getLastNameString() {
-		return lastName;
-	}
-	/**
-	 * @param lastNameString the lastNameString to set
-	 */
-	void setLastNameString(String lastNameString) {
-		this.lastName = lastNameString;
-	}
-	@Override
-	public String toString() {
-		return "Name [title=" + title + ", firstName=" + firstName + ", lastName=" + lastName + "]";
-	}
+	
+	
 
 }
