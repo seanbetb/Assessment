@@ -4,66 +4,84 @@ import java.time.LocalDate;
 
 public class Manager extends Employee {
 	int noOfStaff;
-	double monthlyPay;
+	double salary;
 	double bonus ;
 	/**
 	 * @param uniqueId
-	 * @param name
-	 * @param dept
+	 * @param name2
+	 * @param dept2
 	 * @param dateStarted
 	 * @param phoneNo
-	 * @param monthlyPay
 	 * @param noOfStaff
-	 * @param monthlyPay2
+	 * @param salary
 	 * @param bonus
 	 */
-	public Manager(int uniqueId, Name name, Department dept, LocalDate dateStarted, String phoneNo, double monthlyPay,
-			int noOfStaff, double monthlyPay2, double bonus) {
-		super(uniqueId, name, dept, dateStarted, phoneNo, monthlyPay);
+	public Manager(int uniqueId, Name name2, Department dept2, LocalDate dateStarted, String phoneNo, int noOfStaff,
+			double salary, double bonus) {
+		super(uniqueId, name2, dept2, dateStarted, phoneNo, bonus);
 		this.noOfStaff = noOfStaff;
-		monthlyPay = monthlyPay2;
+		this.salary = salary;
 		this.bonus = bonus;
 	}
+	
+	/**
+	 * @param uniqueId
+	 * @param name2
+	 * @param dept2
+	 * @param dateStarted
+	 * @param phoneNo
+	 */
+	public Manager(int uniqueId, Name name2, Department dept2, LocalDate dateStarted, String phoneNo) {
+		super(uniqueId, name2, dept2, dateStarted, phoneNo);
+	}
+
 	/**
 	 * @return the noOfStaff
 	 */
-	int getNoOfStaff() {
+	public int getNoOfStaff() {
 		return noOfStaff;
 	}
+
 	/**
 	 * @param noOfStaff the noOfStaff to set
 	 */
-	void setNoOfStaff(int noOfStaff) {
+	public void setNoOfStaff(int noOfStaff) {
 		this.noOfStaff = noOfStaff;
 	}
+
 	/**
-	 * @return the monthlyPay
+	 * @return the salary
 	 */
-	double getMonthlyPay() {
-		return monthlyPay;
+	public double getSalary() {
+		return salary;
 	}
+
 	/**
-	 * @param monthlyPay the monthlyPay to set
+	 * @param salary the salary to set
 	 */
-	void setMonthlyPay(double monthlyPay) {
-		this.monthlyPay = monthlyPay;
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
+
 	/**
 	 * @return the bonus
 	 */
-	double getBonus() {
+	public double getBonus() {
 		return bonus;
 	}
+
 	/**
 	 * @param bonus the bonus to set
 	 */
-	void setBonus(double bonus) {
+	public void setBonus(double bonus) {
 		this.bonus = bonus;
 	}
+
 	@Override
 	public String toString() {
-		return "Manager [noOfStaff=" + noOfStaff + ", monthlyPay=" + monthlyPay + ", bonus=" + bonus + "]";
+		return "Manager [noOfStaff=" + noOfStaff + ", salary=" + salary + ", bonus=" + bonus + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -71,11 +89,12 @@ public class Manager extends Employee {
 		long temp;
 		temp = Double.doubleToLongBits(bonus);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(monthlyPay);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + noOfStaff;
+		temp = Double.doubleToLongBits(salary);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -87,31 +106,18 @@ public class Manager extends Employee {
 		Manager other = (Manager) obj;
 		if (Double.doubleToLongBits(bonus) != Double.doubleToLongBits(other.bonus))
 			return false;
-		if (Double.doubleToLongBits(monthlyPay) != Double.doubleToLongBits(other.monthlyPay))
-			return false;
 		if (noOfStaff != other.noOfStaff)
+			return false;
+		if (Double.doubleToLongBits(salary) != Double.doubleToLongBits(other.salary))
 			return false;
 		return true;
 	}
-	/**
-	 * 
-	 */
-	public Manager() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	/**
-	 * @param uniqueId
-	 * @param name
-	 * @param dept
-	 * @param dateStarted
-	 * @param phoneNo
-	 * @param monthlyPay
-	 */
-	public Manager(int uniqueId, Name name, Department dept, LocalDate dateStarted, String phoneNo, double monthlyPay) {
-		super(uniqueId, name, dept, dateStarted, phoneNo, monthlyPay);
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	
+	
+	
+	
 	
 	
 

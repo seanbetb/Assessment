@@ -9,29 +9,33 @@ public abstract class Employee {
     protected LocalDate dateStarted;
     protected String phoneNo;
     protected double monthlyPay;
+   
 	/**
 	 * @param uniqueId
-	 * @param name
-	 * @param dept
+	 * @param name2
+	 * @param dept2
 	 * @param dateStarted
 	 * @param phoneNo
 	 * @param monthlyPay
 	 */
-	public Employee(int uniqueId, Name name, Department dept, LocalDate dateStarted, String phoneNo,
-			double monthlyPay) {
+	public Employee(int uniqueId, Name name2, Department dept2, LocalDate dateStarted, String phoneNo) {
 		super();
 		this.uniqueId = uniqueId;
 		this.name = name;
 		this.dept = dept;
 		this.dateStarted = dateStarted;
 		this.phoneNo = phoneNo;
-		this.monthlyPay = monthlyPay;
+		
 	}
 	/**
 	 * 
 	 */
 	public Employee() {
 		super();
+	}
+	public Employee(int uniqueId2, Name name2, Department dept2, LocalDate dateStarted2, String phoneNo2,
+			double monthlyPay2) {
+		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * @return the uniqueId
@@ -93,22 +97,11 @@ public abstract class Employee {
 	void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	/**
-	 * @return the monthlyPay
-	 */
-	double getMonthlyPay() {
-		return monthlyPay;
-	}
-	/**
-	 * @param monthlyPay the monthlyPay to set
-	 */
-	void setMonthlyPay(double monthlyPay) {
-		this.monthlyPay = monthlyPay;
-	}
-	@Override
+	
+		@Override
 	public String toString() {
 		return "Employee [uniqueId=" + uniqueId + ", name=" + name + ", dept=" + dept + ", dateStarted=" + dateStarted
-				+ ", phoneNo=" + phoneNo + ", monthlyPay=" + monthlyPay + "]";
+				+ ", phoneNo=" + phoneNo + "]";
 	}
 	@Override
 	public int hashCode() {
