@@ -1,12 +1,16 @@
 package com.assessment.sean;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Controller {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		
+		
 		
 		Name one = new Name("Mr", "Tom", "Jenkins");
 		Department myDep1 = new Department(001, "Media", 14);
@@ -39,10 +43,10 @@ public class Controller {
 		Employee myDev9 = new Developer(9, nine, myDep2, LocalDate.now(), "239806348", "One" );
 		
 		Name ten = new Name("Mrs", "Jean", "Melia");
-		Manager man1 = new Manager(10, ten, myDep1, LocalDate.now(), "32412345" );
+		Employee man1 = new Manager(10, ten, myDep1, LocalDate.now(), "32412345", 12, 4000.00, 1000 );
 		
 		Name eleven = new Name("Mr", "Peter", "Queally");
-		Manager man2 = new Manager(11, eleven, myDep1, LocalDate.now(),"23452345" );
+		Employee man2 = new Manager(11, eleven, myDep1, LocalDate.now(),"23452345", 12, 4000.00, 1500 );
 		
 		Name twelve = new Name("Mr", "Seamus", "Gillespie");
 		Employee myDev10 = new Developer(12, twelve, myDep1, LocalDate.now(), "98798788", "Two" );
@@ -72,10 +76,10 @@ public class Controller {
 		Employee myDev18 = new Developer(20, twenty, myDep1, LocalDate.now(),"51207865", "One");
 		
 		Name twentyOne = new Name("Mr", "Vincent", "Furnier");
-		Manager man3 = new Manager(21, twentyOne, myDep2, LocalDate.now(), "32769800");
+		Employee man3 = new Manager(21, twentyOne, myDep2, LocalDate.now(), "32769800", 10, 4800, 2000);
 		
 		Name twentyTwo = new Name("Mr", "Douglas", "Fairbanks");
-		Manager man4 = new Manager(22, twentyTwo, myDep2, LocalDate.now(), "23096543");
+		Employee man4 = new Manager(22, twentyTwo, myDep2, LocalDate.now(), "23096543", 10, 4500, 1500);
 		
 		Name twentyThree = new Name("Mrs", "Jennifer", "Grey");
 		Employee myDev19 = new Developer(23, twentyThree, myDep2, LocalDate.now(), "123123123", "Three");
@@ -99,10 +103,10 @@ public class Controller {
 		Employee myDev25 = new Developer(29, twentyNine, myDep2, LocalDate.now(), "120967565", "One");
 		
 		Name thirty = new Name("Mr", "Angus", "Young");
-		Manager man5 = new Manager(30, thirty, myDep3, LocalDate.now(), "65782345");
+		Employee man5 = new Manager(30, thirty, myDep3, LocalDate.now(), "65782345", 11, 5000.00, 1200);
 		
 		Name thirtyOne = new Name("Mrs", "Jennifer", "Beals");
-		Manager man6 = new Manager(31, thirtyOne, myDep3, LocalDate.now(), "123098676");
+		Employee man6 = new Manager(31, thirtyOne, myDep3, LocalDate.now(), "123098676", 11, 4500.00, 1300);
 		
 		Name thirtyTwo = new Name("Mr", "Neal", "Schon");
 		Employee myDev26 = new Developer(32, thirtyTwo, myDep3, LocalDate.now(), "6456789", "One");
@@ -133,10 +137,7 @@ public class Controller {
 		departments.add(myDep2);
 		departments.add(myDep3);
 		
-		//for (int i = 0; i < departments.size(); i++) {
-			//System.out.println(departments.get(i).getDeptName() +
-					                   //   ", " + departments.get(i));
-				  	                    //  }
+		
 		
 		
 		   ArrayList<Developer> developers = new ArrayList<Developer>();
@@ -173,21 +174,47 @@ public class Controller {
 		   developers.add((Developer) myDev31);
 		   developers.add((Developer) myDev32);
 		   developers.add((Developer) myDev33);
+		   //serialize developers
+		   FileOutputStream fos = new FileOutputStream("dev.dat");
+		   ObjectOutputStream oos = new ObjectOutputStream(fos);
+		   oos.writeObject (developers);
 		   
-		  // for (int i = 0; i < developers.size(); i++) {
-			 //  System.out.println(developers.get(i));
-		  // }
-		   
-		  
-		   
+		   FileInputStream fis = new FileInputStream("dev.dat");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			@SuppressWarnings("unchecked")
+			ArrayList<Developer>  devNew =  (ArrayList<Developer>) ois.readObject();
+			
+			for(Developer dev : devNew) {
+				System.out.println(dev.toString());
+			}
+						 
 		   
 		   ArrayList<Manager> managers = new ArrayList<Manager>();
-		   managers.add(man1);
-		   managers.add(man2);
-		   managers.add(man3);
-		   managers.add(man4);
-		   managers.add(man5);
-		   managers.add(man6);
+		   managers.add((Manager) man1);
+		   managers.add((Manager) man2);
+		   managers.add((Manager) man3);
+		   managers.add((Manager) man4);
+		   managers.add((Manager) man5);
+		   managers.add((Manager) man6);
+		   
+		   fos = new FileOutputStream("man.dat");
+		   oos = new ObjectOutputStream(fos);
+		   oos.writeObject (managers);
+		   
+		   fis = new FileInputStream("man.dat");
+		   ois = new ObjectInputStream(fis);
+		   @SuppressWarnings("unchecked")
+		ArrayList<Manager> manNew = (ArrayList<Manager>) ois.readObject();
+		   
+		   for(Manager man : manNew) {
+			   System.out.println(man.toString());
+		   }
+		   
+		   
+		   
+		  
+		  
+		  
 		   
 		   
 		   
@@ -214,3 +241,4 @@ public class Controller {
 	
 
 }
+	

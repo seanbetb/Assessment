@@ -1,8 +1,9 @@
 package com.assessment.sean;
 
+import java.io.*;
 import java.time.LocalDate;
 
-public abstract class Employee {
+public abstract class Employee implements Serializable {
     protected int uniqueId;
     protected Name name;
     protected Department dept;
@@ -21,8 +22,8 @@ public abstract class Employee {
 	public Employee(int uniqueId, Name name2, Department dept2, LocalDate dateStarted, String phoneNo) {
 		super();
 		this.uniqueId = uniqueId;
-		this.name = name;
-		this.dept = dept;
+		this.name = name2;
+		this.dept = dept2;
 		this.dateStarted = dateStarted;
 		this.phoneNo = phoneNo;
 		

@@ -5,22 +5,22 @@ import java.util.*;
 public class Menu {
 	
 	public void showMenu() {
-		Scanner keyIn = new Scanner(System.in);
-		int option = 0;
+		Scanner sc = new Scanner(System.in);
+		int option;
 		do {
 			System.out.println("***Employee Menu***");
+			System.out.println("  Please select your option: ");
 			System.out.println("1. List all employees. ");
 			System.out.println("2. Add a new Employee, manager or developer");
 			System.out.println("3. Edit an Employee by id");
 			System.out.println("4. Delete an Employee by id");
-			System.out.println("5.	View all Managers");
-			System.out.println("6.	View all Developers");
-			System.out.println("7.	View number of staff within a department");
-			System.out.println("8.	Sub-Menu holiday booking");
-			System.out.println("9.	Sub-Menu payment");
-			System.out.println("10.	Exit Menu");
-			System.out.println("  Please select your option: ");
-			option = keyIn.nextInt();
+			System.out.println("5. View all Managers");
+			System.out.println("6. View all Developers");
+			System.out.println("7. View number of staff within a department");
+			System.out.println("8. Sub-Menu holiday booking");
+			System.out.println("9. Sub-Menu payment");
+			System.out.println("10.Exit Menu");
+			option = sc.nextInt();
 			
 			switch (option) {
 			case 1:
@@ -59,13 +59,14 @@ public class Menu {
 			}
 			
 			
-			}while (option != 10);
-		     keyIn.close();
+			}while (option >0 || option <= 10);
+		
+		     sc.close();
 			
 	}
 
 	private void exitMenu() {
-		// TODO Auto-generated method stub
+		;
 		
 	}
 
@@ -90,7 +91,7 @@ public class Menu {
 	}
 
 	private void viewAllManagers() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -111,7 +112,7 @@ public class Menu {
 
 	private void listAllEmployees() {
 		// TODO Auto-generated method stub
-		
+		return;
 	}
 	
 	

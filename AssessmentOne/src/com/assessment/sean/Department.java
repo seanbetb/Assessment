@@ -1,8 +1,9 @@
 package com.assessment.sean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Department {
+public class Department implements Serializable {
 	private int deptId;
 	private String deptName;
 	private int noOfEmployees;

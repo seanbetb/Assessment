@@ -16,9 +16,9 @@ public class Manager extends Employee {
 	 * @param salary
 	 * @param bonus
 	 */
-	public Manager(int uniqueId, Name name2, Department dept2, LocalDate dateStarted, String phoneNo, int noOfStaff,
+	public Manager(int uniqueId, Name name, Department dept, LocalDate dateStarted, String phoneNo, int noOfStaff,
 			double salary, double bonus) {
-		super(uniqueId, name2, dept2, dateStarted, phoneNo, bonus);
+		super(uniqueId, name, dept, dateStarted, phoneNo, bonus);
 		this.noOfStaff = noOfStaff;
 		this.salary = salary;
 		this.bonus = bonus;
@@ -31,8 +31,9 @@ public class Manager extends Employee {
 	 * @param dateStarted
 	 * @param phoneNo
 	 */
-	public Manager(int uniqueId, Name name2, Department dept2, LocalDate dateStarted, String phoneNo) {
-		super(uniqueId, name2, dept2, dateStarted, phoneNo);
+	public Manager(int uniqueId, Name name, Department dept, LocalDate dateStarted, String phoneNo) {
+		super(uniqueId, name, dept, dateStarted, phoneNo);
+		this.noOfStaff = dept.getNoOfEmployees() - 1;//employees minus the manager
 	}
 
 	/**

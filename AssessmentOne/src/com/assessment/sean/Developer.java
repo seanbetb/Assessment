@@ -5,12 +5,7 @@ import java.time.LocalDate;
 public class Developer extends Employee {
 	String devLevel;
 	double hourlyRate;
-		 
-		 
-		 
-		 
-	 
-	
+		 	 
 	
 	public Developer() {
 		super();

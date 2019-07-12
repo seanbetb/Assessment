@@ -1,6 +1,8 @@
 package com.assessment.sean;
 
-public class Name {
+import java.io.Serializable;
+
+public class Name implements Serializable {
 	private String title;
 	private String firstName;
 	private String lastName;
