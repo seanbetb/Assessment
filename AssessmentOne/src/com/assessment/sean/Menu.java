@@ -1,5 +1,5 @@
 package com.assessment.sean;
-import java.util.Scanner;
+
 import java.util.*;
 
 public class Menu {
@@ -16,10 +16,8 @@ public class Menu {
 			System.out.println("4. Delete an Employee by id");
 			System.out.println("5. View all Managers");
 			System.out.println("6. View all Developers");
-			System.out.println("7. View number of staff within a department");
-			System.out.println("8. Sub-Menu holiday booking");
-			System.out.println("9. Sub-Menu payment");
-			System.out.println("10.Exit Menu");
+			System.out.println("7. Sub-Menu payment");
+			System.out.println("8.Exit Menu");
 			option = sc.nextInt();
 			
 			switch (option) {
@@ -45,28 +43,23 @@ public class Menu {
 			case 6:
 				viewAllDevelopers();
 				
+				
 			case 7:
-				viewNoOfStaffInDept();
-				
-			case 8: 
-				subMenuHolidays();
-				
-			case 9:
 				subMenuPayment();
 				
-			case 10:
+			case 8:
 				exitMenu();
 			}
 			
 			
-			}while (option >0 || option <= 10);
+			}while (option != 8);
 		
 		     sc.close();
 			
 	}
 
 	private void exitMenu() {
-		;
+		
 		
 	}
 
@@ -74,16 +67,7 @@ public class Menu {
 		// TODO Auto-generated method stub
 		
 	}
-
-	private void subMenuHolidays() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void viewNoOfStaffInDept() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	private void viewAllDevelopers() {
 		// TODO Auto-generated method stub

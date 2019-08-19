@@ -10,14 +10,17 @@ public class Controller {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		
+		Menu menu = new Menu();
+	    menu.showMenu();
+		
 		
 		
 		Name one = new Name("Mr", "Tom", "Jenkins");
-		Department myDep1 = new Department(001, "Media", 14);
+		Department myDep1 = new Department(001, "Development", 14);
 		Employee myDev1 = new Developer(1, one, myDep1, LocalDate.now(), "1234567", "One");
 		
 		Name two = new Name("Mr", "John", "Mattis");
-		Department myDep2 = new Department(002, "Finance", 12);
+		Department myDep2 = new Department(002, "DevOps", 12);
 		Employee myDev2 = new Developer(2, two, myDep2, LocalDate.now(), "3215643", "Two");
 		
 		Name three = new Name("Mr", "Peter", "Dinklage");
@@ -175,16 +178,16 @@ public class Controller {
 		   developers.add((Developer) myDev32);
 		   developers.add((Developer) myDev33);
 		   //serialize developers
-		   FileOutputStream fos = new FileOutputStream("dev.dat");
-		   ObjectOutputStream oos = new ObjectOutputStream(fos);
-		   oos.writeObject (developers);
+		    FileOutputStream fos = new FileOutputStream("dev.dat");
+		    ObjectOutputStream oos = new ObjectOutputStream(fos);
+		    oos.writeObject (developers);
 		   
-		   FileInputStream fis = new FileInputStream("dev.dat");
-			ObjectInputStream ois = new ObjectInputStream(fis);
+		    FileInputStream fis = new FileInputStream("dev.dat");
+		    ObjectInputStream ois = new ObjectInputStream(fis);
 			@SuppressWarnings("unchecked")
 			ArrayList<Developer>  devNew =  (ArrayList<Developer>) ois.readObject();
 			
-			for(Developer dev : devNew) {
+			for(Developer dev : devNew) {       
 				System.out.println(dev.toString());
 			}
 						 
@@ -206,9 +209,9 @@ public class Controller {
 		   @SuppressWarnings("unchecked")
 		ArrayList<Manager> manNew = (ArrayList<Manager>) ois.readObject();
 		   
-		   for(Manager man : manNew) {
-			   System.out.println(man.toString());
-		   }
+		  //for(Manager man : manNew) {
+			   //System.out.println(man.toString());
+		  // }
 		   
 		   
 		   
